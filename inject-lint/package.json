@@ -1,0 +1,9 @@
+{
+  "name": "@setup/inject-lint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hook/index.ts",
+  "keywords": [],
+  "author": "NoraH1to <norah1to@qq.com>",
+  "license": "MIT"
+}
