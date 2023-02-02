@@ -2,7 +2,8 @@
   "name": "@setup/base-typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "hook/index.ts",
+  "type": "module",
+  "main": "hook/index.js",
   "keywords": [],
   "author": "NoraH1to <norah1to@qq.com>",
   "license": "MIT"
