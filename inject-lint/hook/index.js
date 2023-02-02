@@ -1,4 +1,25 @@
+const dpMerge = (source, target) => {
+  for (const key in target) {
+    const s = source[key];
+    const t = target[key];
+    const res = {};
+    if (
+      !Array.isArray(s) &&
+      !Array.isArray(t) &&
+      typeof s === 'object' &&
+      typeof t === 'object'
+    ) {
+      res[key] = dpMerge(s, t);
+    } else res[key] = t;
+  }
+};
+
 export default () => {
-  console.log('inject-lint: hooks called');
-  return { a: 233 };
+  return {
+    onMerge({ src, dest }) {
+      if (src.name === 'package.json')
+        return JSON.stringify(dpMerge(dest.getJson(), src.getJson()));
+      return src.getContent();
+    },
+  };
 };
