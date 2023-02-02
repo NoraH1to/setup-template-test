@@ -17,7 +17,7 @@ const dpMerge = (source, target) => {
 export default () => {
   return {
     onMerge({ src, dest }) {
-      if (src.name === 'package.json')
+      if (src.filename === 'package.json')
         return JSON.stringify(dpMerge(dest.getJson(), src.getJson()));
       return src.getContent();
     },
